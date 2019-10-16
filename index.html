@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>公益海马体</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="css/animate.min.css">
+		<script type="text/javascript" src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="pagebox">
+			<div class="indexnav">
+				<div class="navbutton" @click="yuyuepage">
+					<img class="navimgimg" src="img/icon/yuyuehui.png" alt="" :style="yuyuehuiimgstl">
+					<img class="navimg" src="img/icon/yuyue.png" alt="" :style="yuyueimgstl">
+					<p class="navtitle" :style="yuyuestl">预约</p>
+				</div>
+				<div class="navbutton" @click="faxianpage">
+					<img class="navimgimg" src="img/icon/faxian.png" alt="" :style="faxianimgstl">
+					<img class="navimg" src="img/icon/faxianhui.png" alt="" :style="faxianhuiimgstl">
+					<p class="navtitle" :style="faxianstl">发现</p>
+				</div>
+				<div class="navbutton" @click="wodepage">
+					<img class="navimgimg" src="img/icon/wode.png" alt="" :style="wodeimgstl">
+					<img class="navimg" src="img/icon/wodehui.png" alt="" :style="wodehuiimgstl">
+					<p class="navtitle" :style="wodestl">我的</p>
+				</div>
+			</div>
+			<div class="page" id="yuyue" :style="yuyuepagestl">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide blue-slide"><img src="img/slider/0.jpg" alt=""></div>
+						<div class="swiper-slide red-slide"><p class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">内容</p></div>
+						<div class="swiper-slide orange-slide"><p class="ani" swiper-animate-effect="shake" swiper-animate-duration="1.5s" swiper-animate-delay="0s">内容</p></div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+				<div class="kuaijiebox">
+					<div class="kuaijiebutton">
+						<img src="img/x1/y3.png" class="kuaijieimg">
+						<p class="kuaijietitle">证件照</p>
+					</div>
+					<div class="kuaijiebutton">
+						<img src="img/x1/y1.png" class="kuaijieimg">
+						<p class="kuaijietitle">形象照</p>
+					</div>
+					<div class="kuaijiebutton">
+						<img src="img/x1/y2.png" class="kuaijieimg">
+						<p class="kuaijietitle">纪念照</p>
+					</div>
+					<div class="kuaijiebutton">
+						<img src="img/x1/y4.png" class="kuaijieimg">
+						<p class="kuaijietitle">活动照</p>
+					</div>
+				</div>
+				<div class="fline"></div>
+				<div class="anlizhanshi">
+					<div class="anlititle">
+						<p class="title">案例展示</p>
+						<div class="titleline"></div>
+					</div>
+					<div class="anliimgbox" v-for="anlisrc in anliimg">
+						<img class="anliimg" :src="anlisrc" alt="">
+					</div>
+					<div class="footer"></div>
+				</div>
+			</div>
+			<div class="page" id="faxian" :style="faxianpagestl">
+				<div class="faxiantitlebox">
+					<div class="titlebox">
+						<p class="title1">最新</p>
+						<p class="title2">NEW</p>
+					</div>
+					<div class="titleline"></div>
+				</div>
+				<div class="faxianlistbox">
+					<div class="faxianlist" v-for="faxianlist in faxian">
+						<img :src="faxianlist.faxianlistimg" alt="" class="faxianlistimg">
+						<p class="faxianlisttitle">{{faxianlist.faxianlisttitle}}</p>
+						<div class="faxianlistmsg">
+							<p class="faxianlisttime">{{faxianlist.faxianlisttime}}</p>
+							<p class="faxianlistyuedu">阅读 &nbsp &nbsp{{faxianlist.faxianlistyuedu}}</p>
+						</div>
+						<div class="line"></div>
+					</div>
+				</div>
+				<div class="footer"></div>
+			</div>
+			<div class="page" id="wode" :style="wodepagestl">
+				<div class="logobox">
+					<div class="logoboxbox">
+						<img :src="userlogo" alt="" class="userlogo">
+						<p class="username">{{username}}</p>
+					</div>
+					<div class="userbuttonbox">
+						<div class="userbutton">
+							<img src="" alt="" class="buttonimg">
+							<p class="buttontitle">全部</p>
+						</div>
+						<div class="userbutton">
+							<img src="" alt="" class="buttonimg">
+							<p class="buttontitle">待拍摄</p>
+						</div>
+						<div class="userbutton">
+							<img src="" alt="" class="buttonimg">
+							<p class="buttontitle">待取货</p>
+						</div>
+						<div class="userbutton">
+							<img src="" alt="" class="buttonimg">
+							<p class="buttontitle">评价</p>
+						</div>
+						<div class="userbutton">
+							<img src="" alt="" class="buttonimg">
+							<p class="buttontitle">售后</p>
+						</div>
+					</div>
+					<div class="background">
+						<div class="bg1"></div>
+						<div class="bg2"></div>
+						<div class="bg3"></div>
+					</div>
+				</div>
+				<div class="rowbuttonbox">
+					<div class="rowbutton">
+						<img src="" alt="" class="buttonimg">
+						<p class="buttontitle">云相册</p>
+						<img src="" alt="" class="arrow">
+					</div>
+				</div>
+				<div class="rowbuttonbox">
+					<div class="rowbutton">
+						<img src="" alt="" class="buttonimg">
+						<p class="buttontitle">关于我们</p>
+						<img src="" alt="" class="arrow">
+					</div>
+				</div>
+				<div class="rowbuttonbox">
+					<div class="rowbutton">
+						<img src="" alt="" class="buttonimg">
+						<p class="buttontitle">客户服务</p>
+						<img src="" alt="" class="arrow">
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/swiper.animate.min.js"></script>
+		<!-- Initialize Swiper -->
+		<script>
+		  var mySwiper = new Swiper('.swiper-container',{
+		  on:{
+		    init: function(){
+		      swiperAnimateCache(this); //隐藏动画元素 
+		      this.emit('slideChangeTransitionEnd');//在初始化时触发一次slideChangeTransitionEnd事件
+		    }, 
+		    slideChangeTransitionEnd: function(){ 
+		      swiperAnimate(this); //每个slide切换结束时运行当前slide动画
+				this.slides.eq(this.activeIndex).find('.ani').removeClass('ani');//动画只展示一次
+		    } 
+		  }
+		});
+		
+		</script>
+		<script src="js/main.js" ></script>
+	</body>
+</html>
